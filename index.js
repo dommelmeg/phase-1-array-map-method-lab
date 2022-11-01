@@ -11,6 +11,24 @@ const tutorials = [
   'what is JSONP?'
 ];
 
+// const titleCased = () => {
+//   const changeToTitleCase = str => {
+//     return str = str.toLowerCase().split('').map(function(word) {
+//       return word.replace(word[0], word [0].toUpperCase())
+//     }).join('')
+//   }
+//   return changeToTitleCase
+// }
+
 const titleCased = () => {
-  return tutorials
+  const newTutorials = tutorials.map((sentence) => {
+    const words = sentence.split(' ')
+    const titleCaseWords = words.map((word) => word[0].toUpperCase() + word.substring(1))
+    const titleCaseSentence = titleCaseWords.join(' ')
+    return titleCaseSentence
+  })
+  return newTutorials
 }
+
+
+//Write a funciton that selects first letter of each word in the string using split()
